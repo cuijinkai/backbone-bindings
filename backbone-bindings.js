@@ -140,7 +140,10 @@
                     return this.val();
                 }],
                 set: function(value) {
+	            var position = 0;
+	            if(this[0] && this[0].tagName =='TEXTAREA') position = this.scrollTop()
                     this.val(value);
+                    if(this[0] && this[0].tagName =='TEXTAREA') this.scrollTop(position)
                 }
             };
         },
